@@ -1,0 +1,61 @@
+
+{% block head %}
+
+    <style>
+
+        --ntp-realbox-height: 44px;
+
+        h1 {
+			font-family: monospace;
+		  }
+
+		#input {
+            background-color: black;
+            border-radius: calc(0.5 * var(--ntp-realbox-height));
+            border: none;
+            color: white;
+            font-size: 16px;
+            height: 100%;
+            outline: none;
+            padding-inline-end: 40px;
+            padding-inline-start: 52px;
+            position: relative;
+            width: 100%;
+            box-shadow: 0 1px 6px 0 rgba(32, 33, 36, .28);
+            height: var(--ntp-realbox-height);
+            width: 337px;
+        }
+
+        #inputWrapper {
+            top: 25%;
+            height: 100%;
+            position: relative;
+            font-family: monospace;
+            text-align: center;
+        }
+
+    </style>
+    <title>Home</title>
+
+{% endblock %}
+
+{% block body %}
+
+    <div id="inputWrapper">
+        <h1>CHECK THE WEATHER IN YOUR CITY</h1>
+
+        <form action="/" method="post">
+            <input id="input" placeholder="Enter City Name" type="text" autofocus autocomplete="off" name="city">
+            <input type="submit" value="Search">
+        </form>
+
+
+        <ul>
+            {% for val in the_weather %}
+            <li>{{ val }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+{% endblock %}
+
