@@ -2,8 +2,6 @@
 A WEB APPLICATION THAT HELPS CHECK WEATHER IN A CITY.
 It was created using flask framework, and makes use of "open weather map API"
 
-HOW IT WORKS:
-
 TO SET IT TO WORK LOCALLY (ON WINDOWS OS):
 
 - git clone "repository"
