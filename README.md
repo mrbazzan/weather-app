@@ -1,9 +1,10 @@
 
-# [!WEATHER APP]()
+click link ↓      
+# [WEATHER APP](http://weather-app.herokuapp.com)
 
 ## A WEB APPLICATION THAT HELPS CHECK WEATHER IN A CITY.
     
-    It was created using flask framework, and makes use of "open weather map API"
+It was created using flask framework, and makes use of "open weather map API"
 
 
 ## TO SET IT TO WORK LOCALLY (ON WINDOWS OS):
