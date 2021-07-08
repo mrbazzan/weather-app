@@ -1,10 +1,11 @@
 
 {% block head %}
 
+    <meta http-equiv="Refresh" content="20">
+
     <style>
 
         --ntp-realbox-height: 44px;
-
         h1 {
 			font-family: monospace;
 		  }
@@ -35,6 +36,7 @@
         }
 
     </style>
+
     <title>Home</title>
 
 {% endblock %}
@@ -48,14 +50,14 @@
             <input id="input" placeholder="Enter City Name" type="text" autofocus autocomplete="off" name="city">
             <input type="submit" value="Search">
         </form>
-
-
+    
         <ul>
             {% for val in the_weather %}
             <li>{{ val }}</li>
             {% endfor %}
         </ul>
     </div>
+
 
 {% endblock %}
 

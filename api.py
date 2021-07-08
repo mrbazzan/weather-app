@@ -5,7 +5,7 @@ import sqlite3
 
 def weather(params=None):
     if params is None:
-        params = values
+        return
 
     URL = "http://api.openweathermap.org/data/2.5/weather"
     response = requests.get(URL, params=params)
