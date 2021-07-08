@@ -1,7 +1,7 @@
 
+from flask.globals import current_app
 import requests
-import sqlite3
-
+import psycopg2
 
 def weather(params=None):
     if params is None:
@@ -43,18 +43,25 @@ def time_zone_change(time_in_sec):
 
 def finished(value):
     final = []
-    db = sqlite3.connect("codes.db")
-    db.row_factory = sqlite3.Row
+
     try:
         a, b, c, d, e = weather(value)
     except ValueError:
         return None
-
+    
+    conn = psycopg2.connect(current_app.config['DATABASE'])
+    db = conn.cursor()
+        
     final.append(e)
     final.append(a)
     final.append((str(b) + '°C'))
-    value = db.execute("SELECT country FROM country_code WHERE Alpha2 = (?)", (c,)).fetchall()
+    
+    db.execute("SELECT country FROM country_code WHERE Alpha2 = %s",(c,))
+    value = db.fetchone()
+    
+    final.append(value[0]+ ' (' + time_zone_change(d) + ')')
 
-    final.append(value[0]['country'] + ' (' + time_zone_change(d) + ')')
+    db.close()
+    conn.close()
 
     return final

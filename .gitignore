@@ -5,5 +5,7 @@ __pycache__/
 venv/
 
 codes.db
+db_to_csv.py
 
 .flaskenv
+Procfile.windows

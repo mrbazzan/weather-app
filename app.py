@@ -1,11 +1,17 @@
 
-from sqlite3.dbapi2 import threadsafety
-from flask import Flask, render_template, redirect, request, jsonify, session
+from flask import Flask, render_template, redirect, request
 from flask.helpers import url_for
+
 from api import finished
 import os
 
+
 app = Flask(__name__)
+app.config.from_mapping(
+        SECRET_KEY=os.environ.get('SECRET_KEY', '4774yhhdhdjiidjdhddiiyehddeu'),
+        DATABASE=os.environ.get('DATABASE_URL')
+    )
+
 
 @app.route("/", methods=["POST", "GET"])
 def index():

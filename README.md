@@ -16,4 +16,4 @@ It was created using flask framework, and makes use of "open weather map API"
         set OPEN_WEATHER_API_KEY="api_key_gotten_from Open weather map"
     ```
 - Create a virtual wrapper and install the requirements
-- In the cmd, type ``flask run`` or run ``app.py``
+- In the cmd, type ``flask run``.
